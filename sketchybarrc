@@ -160,8 +160,8 @@ sketchybar \
 
 # add a bracket to spaces
 sketchybar \
-  --add bracket spaces chat web home music code web2 other other2 \
-  --set spaces \
+  --add bracket amogus chat web home music code web2 other other2 \
+  --set amogus \
     background.drawing=on \
     background.color="$bracket_background_color" \
     background.border_width=3 \
@@ -182,6 +182,7 @@ sketchybar \
     background.padding_right=3 \
     background.height=19 \
     background.padding_left=3 \
+    click_script="open -a vivaldi 'file:///Users/kutay/code/cdn/index.md'" \
 
 sketchybar \
   --add bracket leftSide appleLogo \
