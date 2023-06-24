@@ -11,7 +11,7 @@ sketchybar \
     padding_left=12 \
     padding_right=12 \
     y_offset=12 \
-    color="$background_color" \
+    color="$bar_color" \
     display=all \
 
 # global defaults
@@ -22,10 +22,9 @@ sketchybar \
     icon.font="Hack Nerd Font:Bold:14.0" \
     label.font="Hack Nerd Font:Regular:13.0" \
 
-# space 1: chat icon
 sketchybar \
-  --add space chat center \
-  --set chat \
+  --add space space1 center \
+  --set space1 \
     icon=󰋙 \
     associated_display=1 \
     associated_space=1 \
@@ -39,10 +38,9 @@ sketchybar \
     icon.font="Hack Nerd Font:Bold:16.0" \
     icon.color="$current_space_color" \
 
-# space 2: web icon
 sketchybar \
-  --add space web center \
-  --set web \
+  --add space space2 center \
+  --set space2 \
     icon=󰋙 \
     associated_display=1 \
     associated_space=2 \
@@ -56,10 +54,9 @@ sketchybar \
     icon.font="Hack Nerd Font:Bold:16.0" \
     icon.color="$current_space_color" \
 
-# space 3: home icon
 sketchybar \
-  --add space home center \
-  --set home \
+  --add space space3 center \
+  --set space3 \
     icon=󰋙 \
     associated_display=1 \
     associated_space=3 \
@@ -73,10 +70,9 @@ sketchybar \
     icon.font="Hack Nerd Font:Bold:16.0" \
     icon.color="$current_space_color" \
 
-# space 4: music icon
 sketchybar \
-  --add space music center \
-  --set music \
+  --add space space4 center \
+  --set space4 \
     icon=󰋙 \
     associated_display=1 \
     associated_space=4 \
@@ -90,10 +86,9 @@ sketchybar \
     icon.font="Hack Nerd Font:Bold:16.0" \
     icon.color="$current_space_color" \
 
-# space 5: code icon
 sketchybar \
-  --add space code center \
-  --set code \
+  --add space space5 center \
+  --set space5 \
     icon=󰋙 \
     associated_display=1 \
     associated_space=5 \
@@ -107,10 +102,9 @@ sketchybar \
     icon.font="Hack Nerd Font:Bold:16.0" \
     icon.color="$current_space_color" \
 
-# space 6: web icon
 sketchybar \
-  --add space web2 center \
-  --set web2 \
+  --add space space6 center \
+  --set space6 \
     icon=󰋙 \
     associated_display=1 \
     associated_space=6 \
@@ -124,10 +118,9 @@ sketchybar \
     icon.font="Hack Nerd Font:Bold:16.0" \
     icon.color="$current_space_color" \
 
-# space 7: other icon
 sketchybar \
-  --add space other center \
-  --set other \
+  --add space space7 center \
+  --set space7 \
     icon=󰋙 \
     associated_display=1 \
     associated_space=7 \
@@ -141,10 +134,9 @@ sketchybar \
     icon.font="Hack Nerd Font:Bold:16.0" \
     icon.color="$current_space_color" \
 
-# space 8: other2 icon
 sketchybar \
-  --add space other2 center \
-  --set other2 \
+  --add space space8 center \
+  --set space8 \
     icon=󰋙 \
     associated_display=1 \
     associated_space=8 \
@@ -152,21 +144,36 @@ sketchybar \
     background.drawing=off \
     background.color="$background_color" \
     background.padding_left=3 \
-    background.padding_right=17 \
+    background.padding_right=3 \
     click_script="yabai -m space --focus 8" \
     script="~/.config/sketchybar/plugins/space.sh" \
     icon.font="Hack Nerd Font:Bold:16.0" \
     icon.color="$current_space_color" \
 
-# add a bracket to spaces
 sketchybar \
-  --add bracket amogus chat web home music code web2 other other2 \
-  --set amogus \
-    background.drawing=on \
-    background.color="$bracket_background_color" \
+  --add space space9 center \
+  --set space9 \
+    icon=󰋙 \
+    associated_display=1 \
+    associated_space=9 \
+    background.height=25 \
+    background.drawing=off \
+    background.color="$background_color" \
+    background.padding_left=3 \
+    background.padding_right=17 \
+    click_script="yabai -m space --focus 9" \
+    script="~/.config/sketchybar/plugins/space.sh" \
+    icon.font="Hack Nerd Font:Bold:16.0" \
+    icon.color="$current_space_color" \
+
+sketchybar \
+  --add bracket spaces '/space\.*/' \
+  --set spaces \
+    background.color="0xff2e3440" \
     background.border_width=3 \
     background.corner_radius=10 \
-
+    background.clip=1 \
+    background.height=25 \
 
 sketchybar \
   --add item appleLogo left \
@@ -212,7 +219,7 @@ sketchybar \
     script="~/.config/sketchybar/plugins/time.sh" \
     update_freq=3 \
     label.color="$label_color" \
-    label.padding_left=26 \
+    label.padding_left=25 \
     label.padding_right=15 \
     background.drawing=on \
     background.corner_radius=10 \
@@ -228,7 +235,7 @@ sketchybar \
   --set date \
     script="~/.config/sketchybar/plugins/date.sh" \
     label.color="$label_color" \
-    label.padding_left=26 \
+    label.padding_left=25 \
     label.padding_right=15 \
     background.color="$background_color_2" \
     background.drawing=on \
@@ -243,7 +250,7 @@ sketchybar \
     script="~/.config/sketchybar/plugins/system_values/temperature/temp.sh" \
     update_freq=5 \
     label.color="$label_color" \
-    label.padding_left=26 \
+    label.padding_left=25 \
     label.padding_right=15 \
     background.color="$background_color_3" \
     background.drawing=on \
