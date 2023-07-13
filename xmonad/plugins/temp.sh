@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-TEMPERATURE=$(python3 /Users/kutay/.config/sketchybar/plugins/system_values/temperature/temp.py)
+TEMPERATURE=$(python3 /Users/kutay/.config/sketchybar/xmonad/plugins/temp.py)
 
-ICON=""
+ICON=""
 
 # if ((2500 <= $TEMPERATURE && $TEMPERATURE <= 3500)); then
 #     ICON=""
@@ -20,8 +20,8 @@ MOD=$((TEMPERATURE % 100))
 TEMPERATURE=$((TEMPERATURE / 100))
 
 sketchybar -m --set $NAME \
-    label="$TEMPERATURE.$MOD" \
+    label="temp: $TEMPERATURE.$MOD" \
     icon.drawing=off \
-    icon="$ICON"
+    icon=""
 
 # artik pip'im var
