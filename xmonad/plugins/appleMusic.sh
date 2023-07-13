@@ -44,7 +44,7 @@ fi
 FONT="Ubuntu"
 
 if [ $PLAYING -eq 0 ]; then
-  sketchybar -m --set $NAME drawing=on label.font"$FONT:Light Oblique:11.8"
+  sketchybar -m --set $NAME drawing=on label.font="$FONT:Italic:11.8"
   # LABEL="$LABEL (NP)"
 else
   sketchybar -m --set $NAME drawing=on label.font="$FONT:Bold:11.8"

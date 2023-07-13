@@ -83,7 +83,7 @@ sketchybar \
   --add item separator2 left \
   --set separator2 icon=┃ \
     icon.font="Hack Nerd Font:Regular:9.0" \
-    background.padding_right=0 \
+    background.padding_right=-2 \
     background.padding_left=-3 \
     icon.y_offset=1 \
     label.drawing=off \
@@ -110,7 +110,7 @@ sketchybar \
     script="$PLUGIN_DIR/appleMusic.sh" \
     label.font="$FONT:Bold:11.8" \
     label.y_offset=2 \
-    label.padding_left=0 \
+    label.padding_left=-3 \
     background.padding_right=-4 \
     label.color="$music_indicator_color" \
   --subscribe apple_music song_update \
