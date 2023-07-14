@@ -20,63 +20,63 @@ sketchybar \
     ignore_association=on \
   --clone spaces_1.idle space_template \
   --set spaces_1.idle associated_space=1 \
-    icon=obs \
+    icon=note \
     icon.highlight_color="$space_color" \
     icon.background.color="$space_color" \
     drawing=on \
     script="$PLUGIN_DIR/space.sh" \
   --clone spaces_1.misc space_template \
   --set spaces_1.misc associated_space=2 \
-    icon=www \
+    icon=web \
     icon.highlight_color="$space_color" \
     icon.background.color="$space_color" \
     drawing=on \
     script="$PLUGIN_DIR/space.sh" \
   --clone spaces_1.doc space_template \
   --set spaces_1.doc associated_space=3 \
-    icon=www \
+    icon=web \
     icon.highlight_color="$space_color" \
     icon.background.color="$space_color" \
     drawing=on \
     script="$PLUGIN_DIR/space.sh" \
   --clone spaces_1.help space_template \
   --set spaces_1.help associated_space=4 \
-    icon=cod \
+    icon=code \
     icon.highlight_color="$space_color" \
     icon.background.color="$space_color" \
     drawing=on \
     script="$PLUGIN_DIR/space.sh" \
   --clone spaces_1.music space_template \
   --set spaces_1.music associated_space=5 \
-    icon=ter \
+    icon=term \
     icon.highlight_color="$space_color" \
     icon.background.color="$space_color" \
     drawing=on \
     script="$PLUGIN_DIR/space.sh" \
   --clone spaces_1.nine space_template \
   --set spaces_1.nine associated_space=6 \
-    icon=ter \
+    icon=term \
     icon.highlight_color="$space_color" \
     icon.background.color="$space_color" \
     drawing=on \
     script="$PLUGIN_DIR/space.sh" \
   --clone spaces_1.code space_template \
   --set spaces_1.code associated_space=7 \
-    icon=fin \
+    icon=find \
     icon.highlight_color="$space_color" \
     icon.background.color="$space_color" \
     drawing=on \
     script="$PLUGIN_DIR/space.sh" \
   --clone spaces_1.tex space_template \
   --set spaces_1.tex associated_space=8 \
-    icon=fin \
+    icon=game \
     icon.highlight_color="$space_color" \
     icon.background.color="$space_color" \
     drawing=on \
     script="$PLUGIN_DIR/space.sh" \
   --clone spaces_1.web space_template \
   --set spaces_1.web associated_space=9 \
-    icon=mus \
+    icon=ost \
     icon.highlight_color="$space_color" \
     icon.background.color="$space_color" \
     drawing=on \
