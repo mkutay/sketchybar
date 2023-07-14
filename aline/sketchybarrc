@@ -1,0 +1,52 @@
+source $HOME/.config/sketchybar/aline/color.sh
+
+### Store plugin and item directories in variables ###
+ITEM_DIR="$HOME/.config/sketchybar/aline/items" # Directory where the items are configured
+PLUGIN_DIR="$HOME/.config/sketchybar/aline/plugins" # Directory where all the plugin scripts are stored
+
+### Define defult font ###
+FONT="Inconsolata" # Needs to have Regular, Bold, Semibold, Heavy and Black variants
+
+### Padding ###
+PADDINGS=3 # All elements use this padidng
+
+### Setting up the general bar appearance and default values ###
+sketchybar \
+  --bar \
+    height=40 \
+    corner_radius=14 \
+    border_width=0 \
+    margin=80 \
+    blur_radius=0 \
+    position=top \
+    color="$bar_color" \
+    topmost=off \
+    sticky=on \
+    font_smoothing=off \
+    y_offset=-100 \
+    notch_width=0 \
+  --default drawing=on \
+    updates=when_shown \
+    icon.padding_left=$PADDINGS \
+    icon.padding_right=$PADDINGS \
+    label.padding_left=$PADDINGS \
+    label.padding_right=$PADDINGS \
+    background.padding_right=$PADDINGS \
+    background.padding_left=$PADDINGS \
+
+sketchybar --animate sin 30 --bar y_offset=-100 y_offset=-10
+
+### Left ###
+. "$ITEM_DIR/apple.sh" # arch logo
+. "$ITEM_DIR/spaces.sh" # workspaces
+. "$ITEM_DIR/music.sh" # music indicator
+
+### Center ###
+. "$ITEM_DIR/time.sh" # time
+
+### Right ###
+. "$ITEM_DIR/battery.sh" # battery
+. "$ITEM_DIR/system.sh" # resources monitor
+
+sketchybar --update
+echo "sketchybar configuation loaded.."
