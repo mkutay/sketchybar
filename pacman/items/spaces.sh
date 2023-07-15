@@ -11,8 +11,8 @@ sketchybar \
     drawing=on \
     updates=on \
     associated_display=1 \
-    label.font="$FONT:Black:10.0" \
-    icon.font="Hack Nerd Font:Bold:10.0" \
+    label.font="$FONT:Block:10.0" \
+    icon.font="Hack Nerd Font:Bold:9.0" \
     click_script="$SPACE_CLICK_SCRIPT" \
     ignore_association=on \
     background.padding_left=1 \
