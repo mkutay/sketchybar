@@ -1,0 +1,59 @@
+#!/usr/bin/env bash
+
+source ~/.config/info.sh
+source ~/.config/sketchybar/pacman/colors.sh
+
+### Store plugin and item directories in variables ###
+ITEM_DIR="$HOME/.config/sketchybar/pacman/items" # Directory where the items are configured
+PLUGIN_DIR="$HOME/.config/sketchybar/pacman/plugins" # Directory where all the plugin scripts are stored
+
+### Define defult font ###
+FONT="Monocraft"
+
+### Padding ###
+PADDINGS=3  # All elements use this padidng
+
+### Setting up the general bar appearance and default values ###
+sketchybar \
+  --bar \
+    height=50 \
+    corner_radius=14 \
+    border_width=0 \
+    margin=15 \
+    blur_radius=0 \
+    position=top \
+    padding_left=4 \
+    padding_right=4 \
+    color="$bar_color" \
+    topmost=off \
+    sticky=on \
+    font_smoothing=off \
+    y_offset=-100 \
+    notch_width=0 \
+  --default \
+    drawing=on \
+    updates=when_shown \
+    icon.padding_left=$PADDINGS \
+    icon.padding_right=$PADDINGS \
+    label.padding_left=$PADDINGS \
+    label.padding_right=$PADDINGS \
+    background.padding_right=$PADDINGS \
+    background.padding_left=$PADDINGS \
+
+sketchybar --animate sin 30 --bar y_offset=-100 y_offset=15
+
+### Left ###
+. "$ITEM_DIR/apple_logo.sh" # apple logo
+. "$ITEM_DIR/system.sh" # resources monitor
+. "$ITEM_DIR/music_controls.sh" # apple music control widget
+
+### Center ###
+. "$ITEM_DIR/spaces.sh"    # workspaces
+
+### Right ###
+. "$ITEM_DIR/time.sh" # time
+. "$ITEM_DIR/sound.sh" # sound
+. "$ITEM_DIR/battery.sh" # battery
+. "$ITEM_DIR/apple_music.sh" # playing on apple music
+
+echo "sketchybar configuation loaded.."
