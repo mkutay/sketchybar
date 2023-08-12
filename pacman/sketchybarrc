@@ -16,7 +16,7 @@ PADDINGS=3  # All elements use this padidng
 ### Setting up the general bar appearance and default values ###
 sketchybar \
   --bar \
-    height=50 \
+    height=40 \
     corner_radius=14 \
     border_width=0 \
     margin=15 \
@@ -52,7 +52,7 @@ sketchybar --animate sin 30 --bar y_offset=-100 y_offset=15
 
 ### Right ###
 . "$ITEM_DIR/time.sh" # time
-. "$ITEM_DIR/sound.sh" # sound
+# . "$ITEM_DIR/sound.sh" # sound
 . "$ITEM_DIR/battery.sh" # battery
 . "$ITEM_DIR/apple_music.sh" # playing on apple music
 

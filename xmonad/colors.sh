@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-source ~/.config/sketchybar/xmonad/catppuccin-frappe.sh
+source ~/.config/sketchybar/xmonad/catppuccin-mocha.sh
