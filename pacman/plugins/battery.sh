@@ -2,8 +2,8 @@ BATT_PERCENT=$(pmset -g batt | grep -Eo "\d+%" | cut -d% -f1)
 CHARGING=$(pmset -g batt | grep "AC Power")
 if [[ $CHARGING != "" ]]; then
   sketchybar -m --set battery \
-    icon="" \
     label="${BATT_PERCENT}%"
+    # icon="" \
   exit 0
 fi
 case ${BATT_PERCENT} in
