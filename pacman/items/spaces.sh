@@ -12,7 +12,7 @@ sketchybar \
     updates=on \
     associated_display=1 \
     label.font="$FONT:Block:10.0" \
-    icon.font="Hack Nerd Font:Bold:9.0" \
+    icon.font="Hack Nerd Font:Bold:10.5" \
     click_script="$SPACE_CLICK_SCRIPT" \
     ignore_association=on \
     background.padding_left=1 \
@@ -64,8 +64,8 @@ sketchybar \
     icon.padding_right=6 \
   --add bracket spaces_bracket '/space.\.*/' \
   --set space.1 \
-    icon.padding_left=6 \
-  --set spaces_bracket \
-    background.color="$background_color" \
-    background.corner_radius=20 \
-    background.height=25 \
+    icon.padding_left=6
+  # --set spaces_bracket \
+  #   background.color="$background_color" \
+  #   background.corner_radius=20 \
+  #   background.height=25 \

@@ -20,5 +20,5 @@ case ${BATT_PERCENT} in
     *) ICON=""
 esac
 sketchybar -m --set battery \
-  icon="$ICON" \
   label="${BATT_PERCENT}%" \
+  # icon="$ICON" \

@@ -20,14 +20,14 @@ TRACK=$(osascript -e 'tell application "Music" to name of current track as strin
 ARTIST=$(osascript -e 'tell application "Music" to artist of current track as string' 2>/dev/null || echo "unknown artist")
 ALBUM=$(osascript -e 'tell application "Music" to get album of current track as string' 2>/dev/null || echo "unknown album")
 
-if [[ ${#TRACK} -gt 30 ]]; then
-  TRACK="$(echo "$TRACK" | cut -c 1-30)…"
+if [[ ${#TRACK} -gt 70 ]]; then
+  TRACK="$(echo "$TRACK" | cut -c 1-70)…"
 fi
-if [[ ${#ARTIST} -gt 30 ]]; then
-  ARTIST="$(echo "$ARTIST" | cut -c 1-30)…"
+if [[ ${#ARTIST} -gt 70 ]]; then
+  ARTIST="$(echo "$ARTIST" | cut -c 1-70)…"
 fi
-if [[ ${#ALBUM} -gt 30 ]]; then
-  ALBUM="$(echo "$ALBUM" | cut -c 1-30)…"
+if [[ ${#ALBUM} -gt 70 ]]; then
+  ALBUM="$(echo "$ALBUM" | cut -c 1-70)…"
 fi
 
 if [ "$TRACK" == "unknown track" ]; then

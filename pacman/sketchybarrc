@@ -16,19 +16,19 @@ PADDINGS=3  # All elements use this padidng
 ### Setting up the general bar appearance and default values ###
 sketchybar \
   --bar \
-    height=40 \
+    height=30 \
     corner_radius=14 \
     border_width=0 \
-    margin=15 \
+    margin=0 \
     blur_radius=0 \
     position=top \
-    padding_left=4 \
-    padding_right=4 \
-    color="$bar_color" \
+    padding_left=0 \
+    padding_right=0 \
+    color="0x00000000" \
     topmost=off \
     sticky=on \
     font_smoothing=off \
-    y_offset=-100 \
+    y_offset=0 \
     notch_width=0 \
   --default \
     drawing=on \
@@ -40,12 +40,11 @@ sketchybar \
     background.padding_right=$PADDINGS \
     background.padding_left=$PADDINGS \
 
-sketchybar --animate sin 30 --bar y_offset=-100 y_offset=15
-
 ### Left ###
-. "$ITEM_DIR/apple_logo.sh" # apple logo
-. "$ITEM_DIR/system.sh" # resources monitor
-. "$ITEM_DIR/music_controls.sh" # apple music control widget
+# . "$ITEM_DIR/apple_logo.sh" # apple logo
+# . "$ITEM_DIR/system.sh" # resources monitor
+# . "$ITEM_DIR/music_controls.sh" # apple music control widget
+. "$ITEM_DIR/apple_music.sh" # playing on apple music
 
 ### Center ###
 . "$ITEM_DIR/spaces.sh"    # workspaces
@@ -54,6 +53,5 @@ sketchybar --animate sin 30 --bar y_offset=-100 y_offset=15
 . "$ITEM_DIR/time.sh" # time
 # . "$ITEM_DIR/sound.sh" # sound
 . "$ITEM_DIR/battery.sh" # battery
-. "$ITEM_DIR/apple_music.sh" # playing on apple music
 
 echo "sketchybar configuation loaded.."

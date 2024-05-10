@@ -12,8 +12,8 @@
 source ~/.config/colors/catppuccin-mocha.sh
 
 export bar_color="$catppuccin_mocha_base"
-export text_color="$catppuccin_mocha_text"
-export background_color="$catppuccin_mocha_surface0"
+export text_color="$catppuccin_mocha_base"
+export background_color="$catppuccin_mocha_base"
 
 export apple_logo_color="$catppuccin_mocha_mauve"
 
@@ -26,11 +26,11 @@ export music_control_back_color="$catppuccin_mocha_sapphire"
 export music_control_playpause_color="$catppuccin_mocha_flamingo"
 export music_control_forward_color="$catppuccin_mocha_sapphire"
 
-export space_color="$catppuccin_mocha_lavender"
-export active_space_color="$catppuccin_mocha_yellow"
+export space_color="$catppuccin_mocha_base"
+export active_space_color="$catppuccin_mocha_red"
 
-export clock_color="$catppuccin_mocha_text"
+export clock_color="$catppuccin_mocha_base"
 export battery_color="$catppuccin_mocha_green"
 export sound_color="$catppuccin_mocha_blue"
-export line_color="$catppuccin_mocha_pink"
-export no_music_color="$catppuccin_mocha_overlay0"
+export line_color="$catppuccin_mocha_crust"
+export no_music_color="$catppuccin_mocha_surface2"
