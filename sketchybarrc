@@ -1,3 +1,142 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
-source ~/.config/sketchybar/pacman/sketchybarrc
+SKETCHYBAR_CONFIG="$HOME/.config/sketchybar"
+
+ICON_FONT_FACE="JetBrainsMono Nerd Font"
+FONT_FACE="DM Mono"
+
+PLUGIN_DIR="$HOME/.config/sketchybar/plugins"
+
+AM_EVENT="com.apple.Music.playerInfo"
+
+sketchybar --bar \
+    height=37 \
+    color=0x00000000 \
+    margin=0 \
+    sticky=on \
+    padding_left=18 \
+    padding_right=18 \
+    notch_width=188 \
+    display=main
+
+sketchybar --default \
+    background.color=0x66494d64 \
+    background.corner_radius=5 \
+    background.padding_right=6 \
+    background.height=26 \
+    icon.font="$ICON_FONT_FACE:Medium:15.0" \
+    icon.padding_left=6 \
+    icon.padding_right=3 \
+    label.font="$FONT_FACE:Medium:12.0" \
+    label.color=0xffcad3f5 \
+    label.y_offset=0 \
+    label.padding_left=3 \
+    label.padding_right=6
+
+sketchybar --add event apple_music_change $AM_EVENT \
+    --add item apple_music q \
+    --set apple_music \
+    icon= \
+    icon.font="$ICON_FONT_FACE:Bold:14.0" \
+    label.padding_left=3 \
+    script="$PLUGIN_DIR/appleMusic.sh" \
+    background.padding_right=5 \
+    --subscribe apple_music apple_music_change mouse.clicked
+
+sketchybar --add item current_space left \
+    --set current_space \
+    background.color=0xfff5a97f \
+    icon.color=0xff24273a \
+    label.drawing=off \
+    script="$PLUGIN_DIR/current_space.sh" \
+    icon.font="$FONT_FACE:Medium:15.0" \
+    --subscribe current_space space_change mouse.clicked
+
+sketchybar --add item front_app left \
+    --set front_app \
+    background.color=0xffcba6f7 \
+    background.padding_left=0 \
+    background.padding_right=0 \
+    icon.y_offset=1 \
+    icon.color=0xff24273a \
+    label.drawing=no \
+    script="$PLUGIN_DIR/front_app.sh" \
+    --add item front_app.separator left \
+    --set front_app.separator \
+    background.color=0x00000000 \
+    background.padding_left=-3 \
+    icon= \
+    icon.color=0xffcba6f7 \
+    icon.font="$ICON_FONT_FACE:Bold:20.0" \
+    icon.padding_left=0 \
+    icon.padding_right=0 \
+    icon.y_offset=1 \
+    label.drawing=no \
+    --add item front_app.name left \
+    --set front_app.name \
+    background.color=0x00000000 \
+    background.padding_right=0 \
+    icon.drawing=off \
+    label.font="$FONT_FACE:Medium:12.0" \
+    label.padding_left=0 \
+    label.drawing=yes
+
+# sketchybar --add item weather e \
+#     --set weather \
+#     icon= \
+#     icon.color=0xfff5bde6 \
+#     icon.font="$ICON_FONT_FACE:Bold:15.0" \
+#     update_freq=1800 \
+#     script="$PLUGIN_SHARED_DIR/weather.sh" \
+#     background.padding_left=4 \
+#     --subscribe weather system_woke
+
+sketchybar --add bracket front_app_bracket \
+    front_app \
+    front_app.separator \
+    front_app.name \
+    --subscribe front_app front_app_switched
+
+sketchybar --add item clock right \
+    --set clock \
+    icon=󰃰 \
+    icon.color=0xff89b4fa \
+    update_freq=1 \
+    script="$PLUGIN_DIR/clock.sh"
+
+sketchybar --add item battery right \
+    --set battery \
+    update_freq=20 \
+    script="$PLUGIN_DIR/battery.sh"
+
+sketchybar --add item volume right \
+    --set volume \
+    icon.color=0xffa6da95 \
+    label.drawing=true \
+    script="$PLUGIN_DIR/volume.sh" \
+    --subscribe volume volume_change
+
+# keyboard layout
+sketchybar --add item input right \
+    --set input \
+    icon.color=0xffa6da95 \
+    label.drawing=true \
+    script="$PLUGIN_DIR/input.sh" \
+    icon=󰌌 \
+    update_freq=5 \
+    --subscribe input mouse.clicked
+
+sketchybar --add item mic right \
+    --set mic \
+    icon.padding_right=5 \
+    label.padding_left=0 \
+    label.padding_right=0 \
+    icon.color=0xffa6da95 \
+    label.drawing=off \
+    script="$PLUGIN_DIR/mic.sh" \
+    icon= \
+    --subscribe mic mouse.clicked
+
+##### Finalizing Setup #####
+sketchybar --update
+sketchybar --trigger space_change

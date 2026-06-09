@@ -1,0 +1,10 @@
+{
+    "file_types": {
+        "Shell Script": ["sketchybarrc", "**/sketchybarrc"],
+    },
+    "languages": {
+        "Shell Script": {
+            "format_on_save": "on",
+        },
+    },
+}
