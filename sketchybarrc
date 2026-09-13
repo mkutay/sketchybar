@@ -52,6 +52,17 @@ sketchybar --add item current_space left \
     icon.font="$FONT_FACE:Medium:15.0" \
     --subscribe current_space space_change mouse.clicked
 
+sketchybar --add event skhd_mode \
+    --add item skhd_mode left \
+    --set skhd_mode \
+    drawing=off \
+    icon.color=0xff24273a \
+    label.color=0xff24273a \
+    label.font="$FONT_FACE:Bold:12.0" \
+    script="$PLUGIN_DIR/skhd_mode.sh" \
+    label.y_offset=-1 \
+    --subscribe skhd_mode skhd_mode
+
 sketchybar --add item front_app left \
     --set front_app \
     background.color=0xffcba6f7 \
